@@ -1,11 +1,11 @@
 html {
-  font-size: 10px;
+  font-size: 12px;
   font-family: 'Open Sans', sans-serif;
 }
 
 
 h1 {
-  font-size: 60px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -17,13 +17,13 @@ p, li {
 
 
 html {
-  background-color: #00539F;
+  background-color: #0B243B;
 }
 
 body {
-  width: 600px;
+  width: 900px;
   margin: 0 auto;
-  background-color: #FF9500;
+  background-color: #D8D8D8;
   padding: 0 20px 20px 20px;
   border: 2px solid black;
 }
@@ -38,4 +38,6 @@ h1 {
 img {
   display: block;
   margin: 0 auto;
+  width: 50%;
+  height: 50%;
 }
