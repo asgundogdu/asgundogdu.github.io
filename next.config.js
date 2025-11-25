@@ -1,6 +1,8 @@
 /* eslint-env node */
 
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig = {
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
@@ -24,12 +26,14 @@ const nextConfig = {
     multipass: true,
     plugins: ['removeDimensions'],
   },
-  strictMode: true,
-  swcMinify: true,
-  trailingSlash: false,
+  assetPrefix: isGithubPages ? './' : undefined,
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     domains: ['images.unsplash.com', 'source.unsplash.com'],
   },
+  strictMode: true,
+  swcMinify: true,
 };
 
 module.exports = nextConfig;

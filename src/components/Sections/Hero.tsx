@@ -1,4 +1,3 @@
-import {ChevronDownIcon} from '@heroicons/react/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
@@ -8,49 +7,50 @@ import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {imageSrc, name, description, actions} = heroData;
+  const {imageSrc, name, description, actions, highlights} = heroData;
 
   return (
-    <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex h-screen w-screen items-center justify-center">
-        <Image
-          alt={`${name}-image`}
-          className="absolute z-0"
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-          priority
-          src={imageSrc}
-        />
-        <div className="z-10  max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
-            {description}
-            <div className="flex gap-x-4 text-neutral-100">
-              <Socials />
-            </div>
-            <div className="flex w-full justify-center gap-x-4">
-              {actions.map(({href, text, primary, Icon}) => (
-                <a
-                  className={classNames(
-                    'flex gap-x-2 rounded-full border-2 bg-none py-2 px-4 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
-                  )}
-                  href={href}
-                  key={text}>
-                  {text}
-                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
-                </a>
+    <Section className="bg-white" sectionId={SectionId.Hero}>
+      <div className="grid items-center gap-10 md:grid-cols-[1.2fr,0.8fr]">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700 sm:text-sm">Machine Learning Engineer</p>
+            <h1 className="text-4xl font-semibold text-neutral-900 sm:text-5xl lg:text-6xl">{name}</h1>
+            <div className="prose prose-neutral max-w-none text-base text-neutral-700 sm:text-lg">{description}</div>
+          </div>
+          {highlights && (
+            <div className="flex flex-wrap gap-2">
+              {highlights.map(item => (
+                <span
+                  className="rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700 ring-1 ring-neutral-200"
+                  key={item}>
+                  {item}
+                </span>
               ))}
             </div>
+          )}
+          <div className="flex flex-wrap gap-3 text-neutral-800">
+            <Socials />
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {actions.map(({href, text, primary, Icon}) => (
+              <a
+                className={classNames(
+                  'flex items-center gap-x-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 sm:text-base',
+                  primary
+                    ? 'bg-sky-600 text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600'
+                    : 'border border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400',
+                )}
+                href={href}
+                key={text}>
+                {text}
+                {Icon && <Icon className="h-5 w-5" />}
+              </a>
+            ))}
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
-            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-            href={`/#${SectionId.About}`}>
-            <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
-          </a>
+        <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm sm:h-72 sm:w-72 md:h-80 md:w-80">
+          <Image alt={`${name}-image`} layout="fill" objectFit="cover" placeholder="blur" priority src={imageSrc} />
         </div>
       </div>
     </Section>

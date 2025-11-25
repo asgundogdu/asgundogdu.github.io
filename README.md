@@ -44,6 +44,12 @@ Due to the variety of options available for contact form providers, I've hooked 
 
 Of course, all of the code is there and nothing is hidden from you so if you would like to make any other styling/data changes, feel free!
 
-### 7. Deploy to Vercel and enjoy your new Resume Website
+### 7. Deploy to GitHub Pages and enjoy your new Resume Website
 
-Deploying your new site to Vercel is simple, and can be done by following their guide [here.](https://vercel.com/guides/deploying-nextjs-with-vercel) When you're all done and the build succeeds, you should be given a url for your live site, go there and you'll see your new personal resume website! Congratulations!
+This project is configured for static export so it can be hosted on GitHub Pages without relying on Vercel. To publish your site:
+
+1. Run `yarn export` (or `npm run export`) to generate the static site in the `/out` directory.
+2. Commit and push the `/out` folder to a branch named `gh-pages`.
+3. In your repository settings on GitHub, enable GitHub Pages to serve from the `gh-pages` branch (root folder).
+
+After a minute or two, your site will be live at `https://<your-username>.github.io`.
