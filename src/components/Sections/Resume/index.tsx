@@ -20,8 +20,15 @@ const Resume: FC = memo(() => {
           ))}
         </ResumeSection>
         <ResumeSection title="Skills">
-                 <p className="pb-8">Python, Java, Scala - TensorFlow, Keras, PyTorch, OpenCV, PySpark, Neo4j, Apache Spark/Beam, Scio - Google Dataflow/AI Platform, AWS</p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="space-y-2 rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <h3 className="text-lg font-semibold text-neutral-900">Modeling & Evaluation</h3>
+              <p className="text-sm text-neutral-700">PyTorch, TensorFlow, Ray RLlib, LangChain, HuggingFace, vector search (Faiss, Pinecone), prompt evaluation, offline/online experimentation</p>
+            </div>
+            <div className="space-y-2 rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <h3 className="text-lg font-semibold text-neutral-900">MLOps & Data</h3>
+              <p className="text-sm text-neutral-700">Python, Scala, Kubernetes, Kubeflow, Airflow, Spark/Beam, MLflow, Weights & Biases, feature stores, CI/CD for ML, AWS/GCP</p>
+            </div>
           </div>
         </ResumeSection>
       </div>

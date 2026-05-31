@@ -21,8 +21,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: "Ahmet Gundogdu WebPage",
-  description: "my personal webpage",
+  title: "Ahmet Gundogdu | Machine Learning Engineer",
+  description: "ML engineer focused on reliable robotics, large-scale training, and modern MLOps.",
 };
 
 /**
@@ -46,26 +46,20 @@ export const heroData: Hero = {
   name: `Ahmet Gundogdu.`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am a{" "}
-        <strong className="text-stone-100">Machine Learning Engineer</strong>,
-        currently focusing on Large-Scale Imitation Learning for
-        Robotic Mobile manipulation at Boston Dynamics AI Institute. My work
-        involves developing Imitation Learning models for robotic arm control
-        and leading the development of a new library on top of the Ray framework
-        to enhance machine learning training and deployment infrastructure.
-        Previously, I was at Spotify working on AI-powered music recommendations
-        and have co-hosted a podcast on artificial intelligence and machine
-        learning called Veri Tezgahi. I hold a master's degree in Computer &
-        Information Science from Northeastern University, specializing in
-        machine learning and natural language processing.
+      <p className="prose-sm text-stone-700 sm:prose-base lg:prose-lg">
+        I am a <strong className="text-stone-900">Machine Learning Engineer</strong> building reliable, production-grade AI systems. At Boston Dynamics AI Institute I focus on imitation learning for mobile manipulation, shaping policy learning pipelines that move from simulation to hardware with reproducibility and observability in mind.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I co-host a podcast on artificial intelligence and machine learning
-        called Veri Tezgahi. (Currently, only available in Turkish)
+      <p className="prose-sm text-stone-700 sm:prose-base lg:prose-lg">
+        I previously worked on large-scale recommendation systems at Spotify and now spend most of my time combining LLM tooling, vector search, and robotics control stacks. I also co-host Veri Tezgahi, an AI podcast for Turkish-speaking engineers.
       </p>
     </>
   ),
+  highlights: [
+    "LLM evaluation, safety, and retrieval (LangChain, Faiss, OpenAI API)",
+    "Distributed training and reinforcement learning with PyTorch + Ray",
+    "Experiment tracking and observability with MLflow & Weights & Biases",
+    "GPU-first pipelines on Kubernetes for robotics and MLOps",
+  ],
   actions: [
     {
       href: "https://open.spotify.com/show/6xh1JvolfduK8j5sb1WnoC",
@@ -85,7 +79,8 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I am a machine learning enthusiast who loves to build stuff and an outdoor adventurer.`,
+  description:
+    `I design ML systems end-to-end—from data curation to deployment—so research ideas can ship quickly without sacrificing reliability. Outside work I enjoy trail running, tinkering with hardware projects, and sharing lessons learned with the ML community.`,
   aboutItems: [
     { label: "Location", text: "Boston, MA", Icon: MapIcon },
     { label: "Study", text: "Northeastern University", Icon: AcademicCapIcon },
@@ -102,10 +97,10 @@ export const experience: TimelineItem[] = [
     title: "Machine Learning Engineer",
     content: (
       <p>
-        Focused on Large-Scale Imitation Learning for Robotic Mobile
-        manipulation. Developed an Imitation Learning model for robotic arm
-        control and led the development of a new library on top of the Ray
-        framework to enhance ML training and deployment infrastructure.
+        Lead large-scale imitation learning for mobile manipulation, pairing
+        PyTorch + Ray with strong evaluation harnesses to push policies from
+        simulation into hardware. Building reproducible training and rollout
+        tooling with telemetry, experiment tracking, and continuous validation.
       </p>
     ),
   },
@@ -115,10 +110,10 @@ export const experience: TimelineItem[] = [
     title: "Machine Learning Engineer",
     content: (
       <p>
-        Worked on representation learning for Spotify users and tracks using
-        large scale deep neural networks and music description platform using
-        Kubeflow ML infrastructure to automatically describe and tag content for
-        retrieval by multiple teams within the company.
+        Built recommendation and content understanding models using large-scale
+        representation learning. Shipped Kubeflow-based pipelines, feature
+        stores, and vector search services to keep ranking models fresh and
+        observable.
       </p>
     ),
   },
@@ -128,9 +123,8 @@ export const experience: TimelineItem[] = [
     title: "Data Science (Co-op)",
     content: (
       <p>
-        Carried out research and development of a tool that recognizes film
-        entities in podcast audio via fuzzy matching and supervised learning,
-        resulting in publication at KDD 2018.
+        Prototyped an audio entity recognition pipeline using fuzzy matching and
+        supervised learning, which led to a KDD 2018 publication.
       </p>
     ),
   },
@@ -140,9 +134,9 @@ export const experience: TimelineItem[] = [
     title: "Data Scientist",
     content: (
       <p>
-        Designed an RNN-based anomaly detection system to capture car accidents
-        by using time series data taken from city sensors with 95% accuracy,
-        outperforming the heuristic baseline.
+        Designed an RNN-based anomaly detection system for city sensor data
+        (95% accuracy) and automated the rollout so incident alerts were
+        shipped to operators in real time.
       </p>
     ),
   },
@@ -156,8 +150,8 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         {" "}
-        Research Areas: NLP, Recommendation Systems, Information Retrieval,
-        Distributed Systems.
+        Research Areas: NLP, recommendation systems, information retrieval,
+        distributed systems.
       </p>
     ),
   },
@@ -178,7 +172,7 @@ Contact section
 export const contact: ContactSection = {
   headerText: "Get in touch.",
   description:
-    "Here is a good spot for a message to your readers to let them know how best to reach out to you.",
+    "Reach out if you're looking to collaborate on ML platforms, robotics learning loops, or applied LLM projects. I'm always open to swapping notes with fellow engineers.",
   items: [
     {
       type: ContactType.Email,
