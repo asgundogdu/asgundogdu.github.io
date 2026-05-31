@@ -1,74 +1,81 @@
-import { AcademicCapIcon, MapIcon } from "@heroicons/react/outline";
-import React from "react";
+import {AcademicCapIcon, BriefcaseIcon, LightningBoltIcon, MapIcon} from '@heroicons/react/outline';
+import React from 'react';
 
-import GithubIcon from "../components/Icon/GithubIcon";
-import LinkedInIcon from "../components/Icon/LinkedInIcon";
-import StackOverflowIcon from "../components/Icon/StackOverflowIcon";
-import TwitterIcon from "../components/Icon/TwitterIcon";
-import heroImage from "../images/header-background.webp";
-import profilepic from "../images/profilepic.jpg";
+import GithubIcon from '../components/Icon/GithubIcon';
+import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
+import TwitterIcon from '../components/Icon/TwitterIcon';
+import heroImage from '../images/header-background.webp';
+import profilepic from '../images/profilepic.jpg';
 import {
   About,
   ContactSection,
   ContactType,
+  DetailGroup,
   Hero,
   HomepageMeta,
+  ResearchItem,
   Social,
   TimelineItem,
-} from "./dataDef";
+} from './dataDef';
 
 /**
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: "Ahmet Gundogdu | Machine Learning Engineer",
-  description: "ML engineer focused on reliable robotics, large-scale training, and modern MLOps.",
+  title: 'Ahmet Salih Gundogdu | Senior Machine Learning Engineer',
+  description:
+    'Senior ML engineer focused on robot learning, distributed training systems, and production-grade policy deployment.',
 };
 
 /**
  * Section definition
  */
 export const SectionId = {
-  Hero: "hero",
-  About: "about",
-  Resume: "resume",
-  Contact: "contact",
-  Stats: "stats",
+  Hero: 'hero',
+  About: 'about',
+  Resume: 'resume',
+  Contact: 'contact',
+  Stats: 'stats',
 } as const;
 
-export type SectionId = (typeof SectionId)[keyof typeof SectionId];
+export type SectionId = typeof SectionId[keyof typeof SectionId];
 
 /**
  * Hero section
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Ahmet Gundogdu.`,
+  eyebrow: 'Senior Machine Learning Engineer | Robot Learning & ML Systems',
+  name: 'Ahmet Salih Gundogdu.',
   description: (
     <>
       <p className="prose-sm text-stone-700 sm:prose-base lg:prose-lg">
-        I am a <strong className="text-stone-900">Machine Learning Engineer</strong> building reliable, production-grade AI systems. At Boston Dynamics AI Institute I focus on imitation learning for mobile manipulation, shaping policy learning pipelines that move from simulation to hardware with reproducibility and observability in mind.
+        I build large-scale robot-learning systems, distributed training infrastructure, and production-grade policy
+        deployment pipelines. At the RAI Institute, I work on the platform layer that helps research teams move from
+        simulation and evaluation to robot-side deployment.
       </p>
       <p className="prose-sm text-stone-700 sm:prose-base lg:prose-lg">
-        I previously worked on large-scale recommendation systems at Spotify and now spend most of my time combining LLM tooling, vector search, and robotics control stacks. I also co-host Veri Tezgahi, an AI podcast for Turkish-speaking engineers.
+        My work spans IL/BC, RL, DAgger, VLA and diffusion policies, sim-to-real evaluation, and Ray/PyTorch/JAX systems
+        that scale from research prototypes to multi-team platforms.
       </p>
     </>
   ),
   highlights: [
-    "LLM evaluation, safety, and retrieval (LangChain, Faiss, OpenAI API)",
-    "Distributed training and reinforcement learning with PyTorch + Ray",
-    "Experiment tracking and observability with MLflow & Weights & Biases",
-    "GPU-first pipelines on Kubernetes for robotics and MLOps",
+    'Robot learning: IL/BC, RL, DAgger, sim-to-real',
+    'VLA, diffusion/DiT, and flow-matching policies',
+    'Ray/PyTorch/JAX distributed training and online rollouts',
+    'Policy runtime, evaluation, and robot-side deployment',
   ],
   actions: [
     {
-      href: "https://open.spotify.com/show/6xh1JvolfduK8j5sb1WnoC",
-      text: "Podcast [TR]",
+      href: `#${SectionId.Resume}`,
+      text: 'Resume',
       primary: true,
     },
     {
       href: `#${SectionId.Contact}`,
-      text: "Contact",
+      text: 'Contact',
       primary: false,
     },
   ],
@@ -80,63 +87,62 @@ export const heroData: Hero = {
 export const aboutData: About = {
   profileImageSrc: profilepic,
   description:
-    `I design ML systems end-to-end—from data curation to deployment—so research ideas can ship quickly without sacrificing reliability. Outside work I enjoy trail running, tinkering with hardware projects, and sharing lessons learned with the ML community.`,
+    'I focus on the engineering layer that turns robotics research loops into reliable systems: data collection, policy training, evaluation, and deployment. Previously, I worked on large-scale listener and track representation learning for Spotify Search and Home recommendations.',
   aboutItems: [
-    { label: "Location", text: "Boston, MA", Icon: MapIcon },
-    { label: "Study", text: "Northeastern University", Icon: AcademicCapIcon },
+    {label: 'Location', text: 'Cambridge, MA', Icon: MapIcon},
+    {label: 'Current', text: 'RAI Institute', Icon: BriefcaseIcon},
+    {label: 'Focus', text: 'Robot learning systems', Icon: LightningBoltIcon},
+    {label: 'Education', text: 'M.S. Data Science, Northeastern University', Icon: AcademicCapIcon},
   ],
 };
 
 /**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
+ * Resume section
  */
 export const experience: TimelineItem[] = [
   {
-    date: "July 2023 - Present",
-    location: "Boston Dynamics AI Institute. Boston, MA",
-    title: "Machine Learning Engineer",
+    date: 'Jun 2023 - Present',
+    location: 'RAI Institute. Cambridge, MA',
+    title: 'Senior Machine Learning Engineer',
     content: (
       <p>
-        Lead large-scale imitation learning for mobile manipulation, pairing
-        PyTorch + Ray with strong evaluation harnesses to push policies from
-        simulation into hardware. Building reproducible training and rollout
-        tooling with telemetry, experiment tracking, and continuous validation.
+        Leading centralized robot-learning infrastructure for imitation learning, reinforcement learning, online DAgger,
+        evaluation, and robot deployment. The work connects simulation collection, policy training, runtime tooling, and
+        benchmark workflows for VLA-class, diffusion/DiT, and flow-matching robot policies.
       </p>
     ),
   },
   {
-    date: "March 2019 - April 2023",
-    location: "Spotify. Boston, MA",
-    title: "Machine Learning Engineer",
+    date: 'Mar 2019 - Apr 2023',
+    location: 'Spotify. Boston, MA',
+    title: 'Machine Learning Engineer',
     content: (
       <p>
-        Built recommendation and content understanding models using large-scale
-        representation learning. Shipped Kubeflow-based pipelines, feature
-        stores, and vector search services to keep ranking models fresh and
-        observable.
+        Built representation learning systems and large-scale ML pipelines for Search, Home, playlist, and track
+        recommendation workflows. The work combined model scaling, feature engineering, experimentation, and production
+        data systems.
       </p>
     ),
   },
   {
-    date: "January 2018 - August 2018",
-    location: "WarnerMedia Applied Analytics Solutions. Boston, MA",
-    title: "Data Science (Co-op)",
+    date: 'Jan 2018 - Aug 2018',
+    location: 'WarnerMedia Applied Analytics Solutions. Boston, MA',
+    title: 'Data Science Intern and Collaborator',
     content: (
       <p>
-        Prototyped an audio entity recognition pipeline using fuzzy matching and
-        supervised learning, which led to a KDD 2018 publication.
+        Built NLP and audio-processing workflows for recognizing film entities in podcast content, combining fuzzy
+        matching and supervised learning in a research collaboration.
       </p>
     ),
   },
   {
-    date: "April 2015 - July 2016",
-    location: "STM Defense Technologies and Engineering Inc. Ankara, Turkey",
-    title: "Data Scientist",
+    date: 'Apr 2015 - Jul 2016',
+    location: 'STM Defense Technologies and Engineering Inc. Ankara, Turkey',
+    title: 'Data Scientist',
     content: (
       <p>
-        Designed an RNN-based anomaly detection system for city sensor data
-        (95% accuracy) and automated the rollout so incident alerts were
-        shipped to operators in real time.
+        Worked on time-series anomaly detection for traffic sensor systems, using recurrent neural networks to identify
+        incident patterns and support operational alerting.
       </p>
     ),
   },
@@ -144,78 +150,128 @@ export const experience: TimelineItem[] = [
 
 export const education: TimelineItem[] = [
   {
-    date: "December 2018",
-    location: "Northeastern University. Boston, MA",
-    title: "Masters in Data Science",
-    content: (
-      <p>
-        {" "}
-        Research Areas: NLP, recommendation systems, information retrieval,
-        distributed systems.
-      </p>
-    ),
+    date: 'Sep 2016 - Dec 2018',
+    location: 'Northeastern University. Boston, MA',
+    title: 'M.S. Data Science',
+    content: <p>Thesis: Post-correction of OCR outputs for historical documents using language models.</p>,
   },
   {
-    date: "January 2015",
-    location: "Sabanci University. Istanbul, Turkey",
-    title: "Mechatronics Engineering",
-    content: (
-      <p>Thesis: Inverted Pendulum System Using Reinforcement Learning</p>
-    ),
+    date: 'Sep 2011 - Jan 2015',
+    location: 'Sabanci University. Istanbul, Turkey',
+    title: 'B.S. Mechatronics Engineering',
+    content: <p>Thesis: Inverted pendulum control using reinforcement learning.</p>,
+  },
+];
+
+export const skillGroups: DetailGroup[] = [
+  {
+    title: 'Robot Learning',
+    items: [
+      'IL/BC',
+      'RL',
+      'DAgger',
+      'sim-to-real',
+      'VLA policies',
+      'diffusion policies',
+      'flow matching',
+      'policy evaluation',
+    ],
+  },
+  {
+    title: 'ML Systems',
+    items: [
+      'PyTorch',
+      'JAX',
+      'Ray',
+      'CUDA',
+      'torch.compile',
+      'NVIDIA Nsight',
+      'distributed training',
+      'online rollouts',
+    ],
+  },
+  {
+    title: 'Robotics & Simulation',
+    items: ['IsaacLab', 'MuJoCo/MJLab', 'ROS', 'robot deployment', 'robot-side inference', 'RGB policy rollouts'],
+  },
+  {
+    title: 'Infra & Data',
+    items: ['Kubernetes', 'Docker', 'Bazel', 'Spark', 'Beam', 'BigQuery/BigTable', 'Scala', 'Python', 'C++'],
+  },
+];
+
+export const researchItems: ResearchItem[] = [
+  {
+    title: 'ExpertGen: Scalable sim-to-real expert policy learning from imperfect behavior priors',
+    venue: 'arXiv, 2026',
+  },
+  {
+    title: 'AnyTask: Automated task and data generation for sim-to-real policy learning',
+    venue: 'arXiv, 2025',
+  },
+  {
+    title: 'Hybrid RL + Imitation Learning Platform for Robotics',
+    venue: 'Ray Summit, 2025',
+  },
+  {
+    title: 'How The AI Institute is Revolutionizing Robotics ML Training',
+    venue: 'Ray Summit, 2024',
+  },
+  {
+    title: 'Recognizing Film Entities in Podcasts',
+    venue: 'CoRR/arXiv, 2018',
   },
 ];
 
 /**
-
-Contact section
-*/
+ * Contact section
+ */
 export const contact: ContactSection = {
-  headerText: "Get in touch.",
+  headerText: 'Get in touch.',
   description:
-    "Reach out if you're looking to collaborate on ML platforms, robotics learning loops, or applied LLM projects. I'm always open to swapping notes with fellow engineers.",
+    "Reach out if you're working on robot learning, distributed ML systems, or production policy deployment. The best place to start is email or LinkedIn.",
   items: [
     {
       type: ContactType.Email,
-      text: "gundogduasalih@gmail.com",
-      href: "mailto:gundogduasalih@gmail.com",
+      text: 'gundogduasalih@gmail.com',
+      href: 'mailto:gundogduasalih@gmail.com',
     },
     {
-      type: ContactType.Location,
-      text: "Cambridge MA, US",
-      href: "https://www.google.com/maps/d/u/0/embed?mid=12Z7rpnUEmOMT5EUAt7HDPxL1Xq4&ie=UTF8&hl=en&msa=0&ll=42.368691%2C-70.977173&spn=0.405848%2C0.549316&z=9&output=embed",
-    },
-    {
-      type: ContactType.Twitter,
-      text: "@asalihgundogdu",
-      href: "https://www.twitter.com/asalihgundogdu/",
+      type: ContactType.LinkedIn,
+      text: 'linkedin.com/in/ahmet-salih-gundogdu',
+      href: 'https://www.linkedin.com/in/ahmet-salih-gundogdu',
     },
     {
       type: ContactType.Github,
-      text: "asgundogdu",
-      href: "https://github.com/asgundogdu",
+      text: 'github.com/asgundogdu',
+      href: 'https://github.com/asgundogdu',
+    },
+    {
+      type: ContactType.Location,
+      text: 'Cambridge, MA',
+      href: 'https://www.google.com/maps/place/Cambridge,+MA',
     },
   ],
 };
 
 /**
-
-Social items
-*/
+ * Social items
+ */
 export const socialLinks: Social[] = [
-  { label: "Github", Icon: GithubIcon, href: "https://github.com/asgundogdu" },
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/asgundogdu'},
   {
-    label: "Stack Overflow",
+    label: 'Stack Overflow',
     Icon: StackOverflowIcon,
-    href: "https://stackoverflow.com/users/4980699/ahmet-salih-gundogdu",
+    href: 'https://stackoverflow.com/users/4980699/ahmet-salih-gundogdu',
   },
   {
-    label: "LinkedIn",
+    label: 'LinkedIn',
     Icon: LinkedInIcon,
-    href: "https://www.linkedin.com/in/ahmet-salih-gundogdu/",
+    href: 'https://www.linkedin.com/in/ahmet-salih-gundogdu/',
   },
   {
-    label: "Twitter",
+    label: 'Twitter',
     Icon: TwitterIcon,
-    href: "https://twitter.com/asalihgundogdu",
+    href: 'https://twitter.com/asalihgundogdu',
   },
 ];

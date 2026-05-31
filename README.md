@@ -1,6 +1,6 @@
-# Ahmet Gundogdu
+# Ahmet Salih Gundogdu
 
-Personal website for Ahmet Gundogdu, published at:
+Personal website for Ahmet Salih Gundogdu, published at:
 
 https://asgundogdu.github.io
 
