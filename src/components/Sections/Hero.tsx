@@ -7,14 +7,14 @@ import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {imageSrc, name, description, actions, highlights} = heroData;
+  const {imageSrc, eyebrow = 'Machine Learning Engineer', name, description, actions, highlights} = heroData;
 
   return (
     <Section className="bg-white" sectionId={SectionId.Hero}>
       <div className="grid items-center gap-10 md:grid-cols-[1.2fr,0.8fr]">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700 sm:text-sm">Machine Learning Engineer</p>
+            <p className="text-sm font-semibold text-sky-700 sm:text-base">{eyebrow}</p>
             <h1 className="text-4xl font-semibold text-neutral-900 sm:text-5xl lg:text-6xl">{name}</h1>
             <div className="prose prose-neutral max-w-none text-base text-neutral-700 sm:text-lg">{description}</div>
           </div>

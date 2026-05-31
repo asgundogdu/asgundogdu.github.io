@@ -22,6 +22,7 @@ export interface HomepageMeta {
  */
 export interface Hero {
   imageSrc: string;
+  eyebrow?: string;
   name: string;
   description: JSX.Element;
   actions: HeroActionItem[];
@@ -92,6 +93,16 @@ export interface TimelineItem {
   location: string;
   title: string;
   content: JSX.Element;
+}
+
+export interface DetailGroup {
+  title: string;
+  items: string[];
+}
+
+export interface ResearchItem {
+  title: string;
+  venue: string;
 }
 
 /**

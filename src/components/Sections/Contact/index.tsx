@@ -10,7 +10,6 @@ import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
-import ContactForm from './ContactForm';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: MailIcon, srLabel: 'Email'},
@@ -31,44 +30,40 @@ const Contact: FC = memo(() => {
         <div className="flex flex-col gap-4 md:flex-row md:items-center">
           <MailIcon className="hidden h-14 w-14 text-sky-700 md:block" />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">Contact</p>
+            <p className="text-sm font-semibold text-sky-700">Contact</p>
             <h2 className="text-2xl font-semibold text-neutral-900">{headerText}</h2>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="order-2 col-span-1 md:order-1 ">
-            <ContactForm />
-          </div>
-          <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
-            <p className="prose prose-neutral leading-6 text-neutral-700">{description}</p>
-            <dl className="flex flex-col space-y-3 text-base text-neutral-600 sm:space-y-2">
-              {items.map(({type, text, href}) => {
-                const {Icon, srLabel} = ContactValueMap[type];
-                return (
-                  <div key={srLabel}>
-                    <dt className="sr-only">{srLabel}</dt>
-                    <dd className="flex items-center">
-                      <a
-                        className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-700 transition-colors hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-600',
-                          {'hover:text-neutral-900': href},
-                        )}
-                        href={href}
-                        target="_blank">
-                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-sky-700 sm:h-5 sm:w-5" />
-                        <span className="ml-3 text-sm text-neutral-800 sm:text-base">{text}</span>
-                      </a>
-                    </dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </div>
+        <div className="flex flex-col gap-y-4">
+          <p className="prose prose-neutral leading-6 text-neutral-700">{description}</p>
+          <dl className="grid grid-cols-1 gap-3 text-base text-neutral-600 sm:grid-cols-2">
+            {items.map(({type, text, href}) => {
+              const {Icon, srLabel} = ContactValueMap[type];
+              return (
+                <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm" key={srLabel}>
+                  <dt className="sr-only">{srLabel}</dt>
+                  <dd className="flex items-start">
+                    <a
+                      className={classNames(
+                        'flex min-w-0 rounded-md text-neutral-700 transition-colors hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-600',
+                        {'hover:text-neutral-900': href},
+                      )}
+                      href={href}
+                      rel={href?.startsWith('http') ? 'noreferrer' : undefined}
+                      target={href?.startsWith('http') ? '_blank' : undefined}>
+                      <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-sky-700 sm:h-5 sm:w-5" />
+                      <span className="ml-3 break-words text-sm text-neutral-800 sm:text-base">{text}</span>
+                    </a>
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
         </div>
       </div>
     </Section>
   );
 });
 
-Contact.displayName = 'About';
+Contact.displayName = 'Contact';
 export default Contact;
