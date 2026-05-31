@@ -1,57 +1,20 @@
-# React JS Resume Website Template
+# Ahmet Gundogdu
 
-![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
+Personal website for Ahmet Gundogdu, published at:
 
-### View the site at [asgundogdu.github.io](https://asgundogdu.github.io)
+https://asgundogdu.github.io
 
-#### If this template has helped you and you'd like to support my work, feel free to [♥️ Sponsor](https://github.com/sponsors/tbakerx) the project
+## Development
 
-### 🎉 Version 2 is here! New features:
-1. Completely rebuilt with React and full typescript support
-2. Built on the [Next.js](https://nextjs.org/) framework for easy server side rendering/static generation, image optimization, api routes, and deployment
-3. Styled entirely with [TailwindCss](https://tailwindcss.com/)
-4. Re-organized data population file for customizing site.
-5. Significant improvement/modernization of all site sections
- 
-**Looking for the old version? You can find it [here.](https://github.com/tbakerx/react-resume-template/releases/tag/v1.0.0)**
+```sh
+yarn install
+yarn dev
+```
 
-## Description
+## Build
 
-This is a React based personal resume website template. Built with typescript on the Next.js framework, styled with Tailwind css, and populated with data from a single file, you can easily create, customize and host your own personal website in minutes. Even better, the site is fully mobile-optimized and server-side rendered to ensure fast loading and a clean UI on any device. Read on to learn how to make it your own.
+```sh
+yarn export
+```
 
-## Make it Your Own!
-
-### 1. Make sure you have what you need
-
-To build this website, you will need to have the latest stable versions of Node and Yarn downloaded and installed on your machine. If you don't already have them, you can get Node [here,](https://nodejs.org/en/download/) and Yarn [here.](https://yarnpkg.com/getting-started/install)
-
-### 2. Fork and download this repo (and star if you like!)
-
-Next, find the `Fork` button in the top right of this page. This will allow you to make your own copy, for more info on forking repo's see [here.](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) After this, download to your development machine using the green `Code` button at the top of the repo page.
-
-### 3. Install dependencies and run
-
-Once you have your own copy of this repo forked and downloaded, open the folder in your favorite terminal and run `yarn install` to install dependencies. Following this, run `yarn dev` to run the project. In your terminal you should be given the url of the running instance (usually http://localhost:3000 unless you have something else running).
-
-### 4. Customize the data to make it your own
-
-All of the data for the site is driven via a file at `/src/data/data.tsx`. This is where you'll find the existing content, and updating the values here will be reflected on the site. If you have the site running as described above, you should see these changes reflected on save. The data types for all of these items are given in the same folder in the `dataDef.ts` file. Example images can be found at `src/images/` and are imported in the data file. To change, simply update these images using the same name and location, or add new images and update the imports. 
-
-### 5. Hook up contact form
-Due to the variety of options available for contact form providers, I've hooked up the contact form only so far as handling inputs and state. Form submission and the actual sending of the email is open to your own implementation. My personal recommendation for email provider is [Sendgrid.](https://sendgrid.com/)
-
-### 6. Make any other changes you like
-
-Of course, all of the code is there and nothing is hidden from you so if you would like to make any other styling/data changes, feel free!
-
-### 7. Deploy to GitHub Pages
-
-This project is configured for static export and GitHub Pages deployment through GitHub Actions. The intended default Pages URL is `https://asgundogdu.github.io`.
-
-To publish the site:
-
-1. Make sure the repository is named `asgundogdu.github.io`; otherwise GitHub serves it as a project site under `https://asgundogdu.github.io/<repo-name>/`.
-2. In repository settings, set GitHub Pages to deploy from GitHub Actions.
-3. Merge changes into `main`.
-
-The workflow builds the static site into `/out`, adds `.nojekyll`, and deploys the artifact to GitHub Pages. No custom domain or external hosting provider is required.
+The site is a static Next.js export. GitHub Pages currently serves the generated root `index.html` and `_next/` assets from `main`.

@@ -1,5 +1,5 @@
 {
-  "name": "react-resume-template",
+  "name": "asgundogdu.github.io",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -62,16 +62,16 @@
   "resolutions": {
     "autoprefixer": "10.4.5"
   },
-  "description": "![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')",
+  "description": "Personal website for Ahmet Gundogdu.",
   "main": "next-sitemap.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asgundogdu/ahmetg.github.io.git"
+    "url": "git+https://github.com/asgundogdu/asgundogdu.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/asgundogdu/ahmetg.github.io/issues"
+    "url": "https://github.com/asgundogdu/asgundogdu.github.io/issues"
   },
   "homepage": "https://asgundogdu.github.io"
 }
