@@ -2,7 +2,7 @@
 
 ![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
 
-### View a [live demo here.](https://reactresume.com)
+### View the site at [asgundogdu.github.io](https://asgundogdu.github.io)
 
 #### If this template has helped you and you'd like to support my work, feel free to [♥️ Sponsor](https://github.com/sponsors/tbakerx) the project
 
@@ -44,12 +44,14 @@ Due to the variety of options available for contact form providers, I've hooked 
 
 Of course, all of the code is there and nothing is hidden from you so if you would like to make any other styling/data changes, feel free!
 
-### 7. Deploy to GitHub Pages and enjoy your new Resume Website
+### 7. Deploy to GitHub Pages
 
-This project is configured for static export so it can be hosted on GitHub Pages without relying on Vercel. To publish your site:
+This project is configured for static export and GitHub Pages deployment through GitHub Actions. The intended default Pages URL is `https://asgundogdu.github.io`.
 
-1. Run `yarn export` (or `npm run export`) to generate the static site in the `/out` directory.
-2. Commit and push the `/out` folder to a branch named `gh-pages`.
-3. In your repository settings on GitHub, enable GitHub Pages to serve from the `gh-pages` branch (root folder).
+To publish the site:
 
-After a minute or two, your site will be live at `https://<your-username>.github.io`.
+1. Make sure the repository is named `asgundogdu.github.io`; otherwise GitHub serves it as a project site under `https://asgundogdu.github.io/<repo-name>/`.
+2. In repository settings, set GitHub Pages to deploy from GitHub Actions.
+3. Merge changes into `main`.
+
+The workflow builds the static site into `/out`, adds `.nojekyll`, and deploys the artifact to GitHub Pages. No custom domain or external hosting provider is required.
